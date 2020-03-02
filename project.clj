@@ -8,7 +8,6 @@
                  [org.clojure/tools.cli "0.4.2"]
                  [org.clojure/tools.logging "0.6.0"]
                  [clj-commons/fs "1.5.0"]
-                 [camel-snake-kebab "0.4.1"]
                  [clj-logging-config "1.9.12"]
                  [simple-progress "0.1.3"]
                  [trptcolin/versioneer "0.2.0"]]
