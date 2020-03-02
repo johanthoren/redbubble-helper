@@ -1,12 +1,13 @@
 # rbh
 
-A simple CLI tool to generate images suitable for RedBubble. Uses a SVG as input.
+A CLI tool to generate images suitable for RedBubble. Uses a SVG as input.
 
 ## Dependencies
 
-ImageMagick 6 (not 7)
-Inkscape
-JDK 8 or later
+- ImageMagick 6 (not 7)
+- Inkscape
+- JDK 8 or later
+- Bash
 
 ## Installation
 
