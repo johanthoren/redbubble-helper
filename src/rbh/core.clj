@@ -222,8 +222,8 @@
   [args]
   (let [{:keys [options arguments errors summary]} (parse-opts args cli-options)
         files (map #(str (fs/absolute %)) arguments)
-        non-existing (remove #(fs/exists? %) files)
-        non-svg (remove #(svg? %) (difference (set files) (set non-existing)))]
+        non-existing (remove fs/exists? files)
+        non-svg (remove svg? (difference (set files) (set non-existing)))]
     (cond
       (:help options) ; help => exit OK with usage summary
       {:exit-message (usage summary) :ok? true}
