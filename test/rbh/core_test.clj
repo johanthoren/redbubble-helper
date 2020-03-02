@@ -5,11 +5,11 @@
 
 (def testdir "test/rbh-test-tmp/")
 (def test-files-to-copy
-  ["resources/test_1.svg"
-   "resources/test_2.png"])
-(def testsvg (str testdir "test_1.svg"))
-(def testpng (str testdir "test_2.png"))
-(def output-png-1 (str testdir "test_1_output.png"))
+  ["resources/test.svg"
+   "resources/test.png"])
+(def testsvg (str testdir "test.svg"))
+(def testpng (str testdir "test.png"))
+(def output-png-1 (str testdir "output.png"))
 
 (defn set-up-test-dir
   [f]
@@ -36,13 +36,13 @@
   (testing "Testing that a png file is generated with the correct dimensions."
     (let [t (generate-png! testsvg output-png-1)]
       (is (thrown? java.lang.AssertionError
-                   (generate-png! testpng output-png-1 :width 13500 :height 9505)))
+                   (generate-png! testpng output-png-1 :width 13500 :height 6949)))
       (is (thrown? java.lang.NumberFormatException
                    (generate-png! testsvg output-png-1 :width 13500 :height "foo")))
       (is (thrown? java.lang.NumberFormatException
-                   (generate-png! testsvg output-png-1 :width "foo" :height 9505)))
+                   (generate-png! testsvg output-png-1 :width "foo" :height 6949)))
       (is (= 1350 (:width (generate-png! testsvg output-png-1 :width 1350))))
-      (is (= 950 (:height (generate-png! testsvg output-png-1 :height 950))))
+      (is (= 695 (:height (generate-png! testsvg output-png-1 :height 695))))
       (is (= "ffffff00" (:background t)))
       (is (png? (:file t)))
       (is (not (svg? (:file t))))
@@ -51,7 +51,7 @@
 (deftest test-png-dimensions?
   (testing "Testing that the dimensions are properly read from a png file."
     (is (thrown? java.lang.AssertionError (png-dimensions? testsvg)))
-    (is (= {:width 13500 :height 9505} (png-dimensions? testpng)))))
+    (is (= {:width 13500 :height 6949} (png-dimensions? testpng)))))
 
 (deftest test-greater-dimensions?
   (testing "Testing that the correct dimension is interpreted as greater."
@@ -70,7 +70,7 @@
       (is (png? (:file t)))
       (is (= "ffffff00" (:background t)))
       (is (= 12100 (:width t)))
-      (is (= 8519 (:height t))))))
+      (is (= 5549 (:height t))))))
 
 (deftest test-generate-big-padded-png
   (testing "Testing that the final size of the image is correct."
