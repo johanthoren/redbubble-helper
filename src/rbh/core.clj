@@ -121,7 +121,7 @@
   (let [cmd (bash (str "mogrify -bordercolor transparent -border 700 "
                        image))]
     (if (not-empty (:err cmd))
-      (throw (Exception. (str "Failed to add padding to " image)))
+      (throw (Exception. (:err cmd)))
       image)))
 
 (defn generate-png!

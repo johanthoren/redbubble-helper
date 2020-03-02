@@ -1,4 +1,4 @@
-(defproject rbh "0.1.0"
+(defproject rbh "0.1.1"
   :description "Redbubble Helper"
   :license {:name "ISC License"
             :url "https://github.com/johanthoren/redbubble-helper"

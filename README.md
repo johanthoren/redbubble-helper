@@ -13,6 +13,7 @@ A CLI tool to generate images suitable for RedBubble. Uses a SVG as input.
 
 Build with:
 ```
+lein uberjar
 lein bin
 ```
 
@@ -29,6 +30,26 @@ $ rbh [OPTIONS] file ...
 -h, --help     Print this help message
 -v, --version  Print the current version number of rbh.
 ```
+
+## Known issues
+
+The default limits in ImageMagick need to be increased.
+
+Standard `/etc/ImageMagick-6/policy.xml` excerpt:
+```
+...
+  <policy domain="resource" name="memory" value="256MiB"/>
+...
+```
+
+The following works for me:
+```
+...
+  <policy domain="resource" name="memory" value="2GiB"/>
+...
+```
+
+Your milage may vary.
 
 ## License
 
