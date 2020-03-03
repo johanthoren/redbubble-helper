@@ -13,19 +13,15 @@
                  [trptcolin/versioneer "0.2.0"]]
   :main rbh.core
   :target-path "target/%s"
-  ;; :aliases
-  ;; {"native"
-  ;;  ["shell"
-  ;;   "native-image"
-  ;;   "--initialize-at-build-time"
-  ;;   "--no-fallback"
-  ;;   ;; "-H:+PrintClassInitialization"
-  ;;   ;; "-H:+TraceClassInitialization"
-  ;;   "-H:ReflectionConfigurationFiles=resources/META-INF/native-image/reflect-config.json"
-  ;;   "-H:+ReportExceptionStackTraces"
-  ;;   "-jar" "./target/uberjar/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
-  ;;   "-H:Name=target/${:name}"]}
+  :aliases
+  {"deb"
+   ["shell"
+    "bash"
+    "build-deb.sh"
+    "rbh"
+    "imagemagick (>= 8:6.9.2.10-dfsg-2~), inkscape (>= 0.92.4-4), openjdk-8-jre-headless"
+    "Redbubble Helper"
+    (str "A simple CLI tool to generate images suitable for Redbubble.")]}
   :profiles {:uberjar {:aot :all}}
   :plugins [[lein-shell "0.5.0"]]
-  :bin {:name "rbh"
-        :bin-path "~/bin/"})
+  :bin {:name "rbh"})

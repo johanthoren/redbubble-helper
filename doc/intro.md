@@ -26,6 +26,16 @@ It's only developed and tested on Linux, but it will likely run just fine on Mac
 
 ## Installation
 
+### Debian, Ubuntu etc.
+
+Install the deb file found under [releases](/releases "Redbubble Helper Releases"):
+
+```
+sudo dpkg -i <path-to-deb>
+```
+
+### Standalone binary
+
 Build with:
 ```
 lein uberjar
