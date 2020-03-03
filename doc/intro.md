@@ -28,10 +28,18 @@ It's only developed and tested on Linux, but it will likely run just fine on Mac
 
 ### Debian, Ubuntu etc.
 
-Install the deb file found under [releases](/releases "Redbubble Helper Releases"):
+Install the deb package found under [releases](/releases "Redbubble Helper Releases"):
 
 ```
 sudo dpkg -i <path-to-deb>
+```
+
+### CentOS, RedHat, Fedora etc.
+
+Install the rpm package found under [releases](/releases "Redbubble Helper Releases"):
+
+```
+sudo yum install <path-to-rpm>
 ```
 
 ### Standalone binary
