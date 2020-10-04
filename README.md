@@ -1,5 +1,9 @@
 # Redbubble Helper
 
+**NOTE:** Broken and archived. I don't recommend anyone using Redbubble,
+since they closed my account, wasting hundreds of hours, without any
+reason given, and without replying to emails.
+
 A simple CLI tool to generate images suitable for Redbubble.
 
 See [the documentation](doc/intro.md "Introduction to Redbubble Helper") for more information on installation and usage.
